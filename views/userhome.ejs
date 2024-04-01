@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Secrets</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+  <style>
+    /* Custom CSS for card */
+    .card {
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-footer {
+      background-color: #f8f9fa;
+      border-top: 1px solid #dee2e6;
+      padding: 10px 20px;
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <% if (fines) { %>
+  <center>
+    <h1 style="color: #000000;margin-top: 1%;">FOOD COURT MANAGEMENT SYSTEM</h1><br>
+    <h3 style="color: #000000;">Welcome <%= fines.name %></h3>
+  </center>
+
+  <!-- User profile card -->
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">User Profile</h5>
+            <p class="card-text"><strong>Customer Name:</strong> <%= fines.name %></p>
+            <p class="card-text"><strong>Order Number:</strong> <%= fines.RegNo %></p>
+            <p class="card-text"><strong>Email:</strong> <%= fines.email %></p>
+        
+          </div>
+          <div class="card-footer">
+            <button id="editButton" class="btn btn-primary">Edit Profile</button><br><br>
+        
+            <form id="editForm" action="/userhome/<%= fines._id %>" method="POST" style="display:none;">
+                <label for="name">Name:</label>
+                <input class="form-control" type="text" id="name" name="name" value="<%= fines.name %>" required><br>
+                
+                <label for="email">Email:</label>
+                <input class="form-control" type="text" id="email" name="email" value="<%= fines.email %>" required><br>
+                <!-- Add a hidden input field to include RegNo -->
+                <input type="hidden" name="RegNo" value="<%= fines.RegNo %>">
+                <button type="submit" class="btn btn-success">Save Changes</button>
+            </form>
+        
+            <script>
+                document.getElementById("editButton").addEventListener("click", function() {
+                    document.getElementById("editForm").style.display = "block";
+                });
+            </script>
+        </div>
+        
+        
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table displaying fines -->
+  <center>
+    <table class="table table-dark" style="width: 97%;border:1px solid #fff ;box-shadow: 1px 1px 10px 0px #fff;">
+      <thead>
+        <tr>
+          <th scope="white">ID</th>
+          <th scope="col">Date</th>
+          <th scope="col">Customer Name</th>
+          <th scope="col">Order Number</th>
+          <th scope="col">Email</th>
+      
+          <th scope="col">Food for</th>
+          <th scope="col">Food Amount</th>
+          <!-- <th scope="col">Total Amount</th> -->
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= fines.id %></td>
+          <td><%= fines.date %></td>
+          <td><%= fines.name %></td>
+          <td><%= fines.RegNo %></td>
+          <td><%= fines.email %></td>
+          
+          <td><%= fines.reason %></td>
+          <td><%= fines.amount %></td>
+          <td><%= fines.status %></td>
+        </tr>
+      </tbody>
+    </table>
+  </center><br><br><br>
+  <% } else { %>
+  <p style="color:red;">No fines found.</p>
+  <% } %>
+  <center>
+    <a class="btn btn-primary btn-lg" href="/" role="button">Log Out</a>
+  </center>
+</body>
+
+</html>

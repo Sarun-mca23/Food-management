@@ -1,0 +1,101 @@
+<%- include('partials/header') %>
+<div class="container mt-5">
+  <h1>Student Register</h1>
+
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <div class="card-body">
+    
+          <!-- Makes POST request to /register route -->
+          <form action="/userregister" method="POST">
+            <div class="form-group">
+
+              <div class="form-group">
+                <label for="regno">Register Number</label>
+                <input type="text" class="form-control" name="regno" required>
+              </div>
+
+              <div class="form-group">
+                <label for="name">Student Name</label>
+                <input type="text" class="form-control" name="studentname" required>
+              </div>
+
+              <div class="form-group">
+                <label for="batch">Batch</label>
+                <input type="text" class="form-control" name="batch" required>
+              </div>
+
+              <div class="form-group">
+                <label for="course">course</label>
+                <select class="form-control" name="course" required>
+                  <option>Select a Course</option>
+                  <option>Computer Science</option>
+                  <option>Life Science</option>
+                  <option>Commerce</option>
+                  <option>Electronics</option>
+                  <option>Management</option>
+                  <option>Mathematics</option>
+                  <option>English</option>
+                  <option>Social Service</option>
+                  <option>Catering Science & Hotel Management</option>
+                  </select>
+              </div>
+
+              <div class="form-group">
+                <label for="section">Section</label>
+                <input type="text" class="form-control" name="section" required>
+              </div>
+
+              <div class="form-group">
+                <label for="department">Department</label>
+                <select class="form-control" name="department" required>
+                <option>Select a department</option>
+                <option>Master of Computer Application</option>
+                <option>Bachelor of computer Application</option>
+                <option>Master of Computer Science</option>
+                <option>Bachelor of Computer Science</option>
+                <option>Master of Business Administration</option>
+                <option>Bachelor of Business Administration</option>
+                <option>M.Sc Biochemistry</option>
+                <option>M.Sc Information technology</option>
+                <option>M.Sc Foods & Nutrition</option>
+                <option>M.Com (Computer Applications)</option>
+                <option>B.Sc CS & HM</option>
+                <option>MSW programmes</option>
+                <option>B.Sc. Psychology</option>
+                <option>M.A. English Literature</option>
+                <option>B.A. English Literature</option>
+                <option>M.Sc Maths</option>
+                <option>B.Sc Maths</option>
+                <option>BBA(Logistics)</option>
+                <option>B.Sc Electronics & Communication System</option>
+                <option>M.Sc Applied Electronics</option>
+             </select>
+              </div>
+
+              <div class="form-group">
+                <label for="batch">Date of Registration</label>
+                <input type="date" class="form-control" name="date of registration" required>
+              </div>
+
+              <label for="Email">Email</label>
+              <input type="email" class="form-control" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" class="form-control" name="password" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<%- include('partials/footer') %>

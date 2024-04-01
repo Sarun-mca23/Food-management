@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Secrets</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: url('../images/unsplash.jpg');
+}
+
+/* Container styles */
+.container {
+  background-color: rgba(255, 255, 255, 0.9); /* Adjust the opacity to your preference */
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Box shadow for depth */
+}
+
+/* Jumbotron styles */
+.jumbotron {
+  color: #333;
+  text-align: center;
+}
+
+.jumbotron h1 {
+  font-size: 3.5em; /* Increase font size for emphasis */
+  margin-bottom: 20px;
+  text-transform: uppercase; /* Uppercase for added impact */
+  letter-spacing: 2px; /* Increase letter spacing for readability */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Choose an attractive font family */
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Add text shadow for depth */
+  font-weight: 400;
+  
+}
+
+.jumbotron hr {
+  border-color: #333;
+  width: 50%;
+  margin: 20px auto;
+}
+
+/* Button styles */
+.btn {
+  background-color: rgb(75, 75, 234);
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Remove default link underline */
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Button shadow for depth */
+}
+
+.btn:hover {
+  background-color: rgb(15, 15, 142);
+}
+
+/* Footer styles */
+footer {
+  margin-top: 50px;
+  text-align: center;
+}
+  </style>
+</head>
+
+<body>
+<div class="jumbotron text-center" s>
+  <div class="container">
+    <h1 class="display-3">WELCOME TO CASHIER</h1>
+    <hr>
+    <a class="btn  btn-primary btn-lg" href="/add" role="button">Collect payment</a>
+    
+    <a class="btn  btn-primary btn-lg" href="/fines" role="button">All order Details</a>
+    <a class="btn  btn-primary btn-lg" href="/adminregistration" role="button">Admin Registration</a>
+    <a class="btn  btn-primary btn-lg" href="/update" role="button">update order</a>
+    <a class="btn  btn-primary btn-lg" href="/viewone" role="button">Particular order Detail</a>
+    <a  class="btn  btn-primary btn-lg" href="/logout" role="button">Back</a> 
+  </div>
+</div>
+</body>
+</html>

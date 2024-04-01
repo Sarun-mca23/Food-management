@@ -1,0 +1,18 @@
+<%- include('partials/header') %>
+<form action="/fees" method="post"> 
+  <div class="inputbox">
+    <ion-icon name="mail-outline"></ion-icon>
+    <label for="">Select Fees Type</label>
+    <select name="feestype" required>
+      <option value="SEM FEES">SEM FEES</option>
+      <option value="BREAKAGE FEES">BREAKAGE FEES</option>
+    </select>
+</div>
+  <div class="inputbox">
+    <ion-icon name="mail-outline"></ion-icon>
+    <input type="number" name="fees" required>
+    <label for="">Fees amount</label>
+</div>
+<button type="submit">Add Fees</button><br><br>
+</form>
+<%- include('partials/footer') %>

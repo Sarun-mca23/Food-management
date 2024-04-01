@@ -1,0 +1,34 @@
+<!-- Add the stylesheet link -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<h1>Customer Details</h1>
+<% if (Student.length > 0) { %>
+  <table class="table table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Date</th>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Order Number</th>
+        <th scope="col">Email</th>
+  
+        <th scope="col">Food Name</th>
+        <th scope="col">Food Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% Student.forEach(function(student) { %>
+        <tr>
+          <td><%= student.date %></td>
+          <td><%= student.name %></td>
+          <td><%= student.RegNo %></td>
+          <td><%= student.email %></td>
+      
+          <td><%= student.reason %></td>
+          <td><%= student.amount %></td>
+        </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<% } else { %>
+  <p>No fines found.</p>
+<% } %>
